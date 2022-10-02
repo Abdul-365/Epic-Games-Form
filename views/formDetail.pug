@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title} 
+        link(rel='stylesheet', href='/stylesheets/detail.css')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons+Outlined', rel='stylesheet')
+        script(src='https://kit.fontawesome.com/4c1b10f580.js', crossorigin='anonymous')
+    body
+        form(method='POST' action='' novalidate)
+            // Heading
+            section.heading
+                img(src='https://cdn2.unrealengine.com/Unreal+Engine%2Feg-logo-filled-1255x1272-0eb9d144a0f981d1cbaaa1eb957de7a3207b31bb.png')
+                h3 Account Info
+            // Text Boxes
+            section.text-boxes
+                .dropdown(role='listbox')
+                    label.name(for='search-country') Counrty
+                    input#search-country(type='text', value=formdata.country, name='country')
+                    ul.dropdown-content(role='presentation')
+                        li.no-options No options
+                    .icon
+                        i.fa-solid.fa-caret-down
+                .name
+                    .box.first-name
+                        input#first-name(type='text', value=formdata.first_name, required='', name='first_name')
+                        label.placeholder(for='first-name') First Name
+                        span.validity
+                    .box.last-name
+                        input#last-name(type='text', value=formdata.last_name, required='' name='last_name')
+                        label.placeholder(for='last-name') Last Name
+                        span.validity
+                .box.bigbox
+                    input#display-name(type='text', value=formdata.display_name, required='' name='display_name')
+                    label.placeholder(for='display-name') Display Name
+                    span.validity
+                .box.bigbox
+                    input#email(type='email', value=formdata.email, required='' name='email')
+                    label.placeholder(for='email') Email
+                    span.validity
+            // Checkboxes
+            section.checkboxes
+                label
+                    input(type='checkbox' name='email_subscription' checked=(formdata.email_subscription ? true : false))
+                    .box-highlight
+                        span.box
+                            span.material-icons.tick
+                                | check
+                    .text
+                        | Receive email about Epic Games products, news, events and promotions.
+            // Button
+            button.continue(type='submit') Save Changes
+            a(href=updatePass) Change Password
+        script(src='/javascripts/detail.js')

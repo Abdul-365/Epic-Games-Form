@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background-color: #121212;
+}
+
+::-webkit-scrollbar {
+    background-color: #121212;
+    width: 0.7em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #878787;
+    border-radius: 0.7em;
+}
+
+body, a {
+    font-size: 0.875rem;
+    font-family: Brutal, sans-serif;
+    line-height: 1.25rem;
+    letter-spacing: 0.1px;
+    color: #C1BEBC;
+}   
+
+.show {
+    margin-top: 15em !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    background-color: #878787;
+    margin-bottom: 3em; 
+}
+
+.submit-icon {
+    font-size: 7em;
+    color: #121212;
+}
+
+.status {
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.response, .response a {
+    font-size: 1.1rem;
+}
+

@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Epic Games
+        link(rel='stylesheet', href='/stylesheets/updatePass.css')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons+Outlined', rel='stylesheet')
+        script(src='https://kit.fontawesome.com/4c1b10f580.js', crossorigin='anonymous')
+    body
+        form(method='POST' action='' novalidate)
+            // Heading
+            section.heading
+                img(src='https://cdn2.unrealengine.com/Unreal+Engine%2Feg-logo-filled-1255x1272-0eb9d144a0f981d1cbaaa1eb957de7a3207b31bb.png')
+                h3 Change Password
+            // Text Boxes
+            section.text-boxes
+                .box.bigbox
+                    input#current_pass.password(type='password', minlength='8', value=(current), required='' name='current_pass')
+                    label.placeholder(for='password') Current Password
+                    span.validity(pass=(passMatch))
+                    .eye.curreye
+                        span.material-icons.on
+                            | visibility
+                        span.material-icons.off
+                            | visibility_off
+                .box.bigbox
+                    input#new_pass.password(type='password', minlength='8', value=(new_), required='' name='new_pass')
+                    label.placeholder(for='password') New Password
+                    span.validity
+                    .eye
+                        span.material-icons.on
+                            | visibility
+                        span.material-icons.off
+                            | visibility_off
+                    .password-info
+                        span.material-icons-outlined
+                            | info
+                        span.display-info
+                            | Password must have 7+ characters and no whitespace
+            // Button
+            button.continue(type='submit')  Save Changes
+        script(src='/javascripts/updatePass.js')
